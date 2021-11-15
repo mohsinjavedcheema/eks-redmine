@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: test-cluster
+  region: us-east-1
+
+managedNodeGroups:
+  - name: linux-nodes
+    labels: { role: workers }
+    instanceType: t2.small
+    desiredCapacity: 1
+    volumeSize: 80
+    privateNetworking: true
